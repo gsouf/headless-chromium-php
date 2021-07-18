@@ -195,7 +195,7 @@ class MouseApiTest extends BaseTestCase
 
         // find element with id "a"
         $page->mouse()->find('#a');
-        \usleep(2000000);
+        \usleep(1000000);
 
         $x = $page->mouse()->getPosition()['x'];
         $y = $page->mouse()->getPosition()['y'];
@@ -203,7 +203,7 @@ class MouseApiTest extends BaseTestCase
         $this->assertGreaterThanOrEqual(8, $x);
         $this->assertLessThanOrEqual(51, $x);
 
-        $this->assertGreaterThanOrEqual(87, $y);
+        $this->assertGreaterThanOrEqual(86, $y);
         $this->assertLessThanOrEqual(107, $y);
     }
 }
