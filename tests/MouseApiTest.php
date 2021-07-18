@@ -79,7 +79,7 @@ class MouseApiTest extends BaseTestCase
 
         // scroll 100px down
         $page->mouse()->scrollDown(100);
-        \usleep(200000);
+        \usleep(500000);
 
         $windowScrollY = $page->evaluate('window.scrollY')->getReturnValue();
 
@@ -87,7 +87,7 @@ class MouseApiTest extends BaseTestCase
 
         // scrolling 100px up should revert the last action
         $page->mouse()->scrollUp(100);
-        \usleep(200000);
+        \usleep(500000);
 
         $windowScrollY = $page->evaluate('window.scrollY')->getReturnValue();
 
@@ -157,7 +157,7 @@ class MouseApiTest extends BaseTestCase
         $page = $this->openSitePage('bigLayout.html');
 
         $page->mouse()->find('#bottomLink');
-        \usleep(1000000);
+        \usleep(4000000);
 
         $page->mouse()->click();
         $page->waitForReload(Page::LOAD, 5000);
@@ -195,7 +195,7 @@ class MouseApiTest extends BaseTestCase
 
         // find element with id "a"
         $page->mouse()->find('#a');
-        \usleep(1000000);
+        \usleep(3000000);
 
         $x = $page->mouse()->getPosition()['x'];
         $y = $page->mouse()->getPosition()['y'];
@@ -203,7 +203,7 @@ class MouseApiTest extends BaseTestCase
         $this->assertGreaterThanOrEqual(8, $x);
         $this->assertLessThanOrEqual(51, $x);
 
-        $this->assertGreaterThanOrEqual(86, $y);
+        $this->assertGreaterThanOrEqual(87, $y);
         $this->assertLessThanOrEqual(107, $y);
     }
 }
